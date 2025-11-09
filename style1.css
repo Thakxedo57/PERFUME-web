@@ -1,0 +1,215 @@
+/* 🔹 รีเซ็ตค่าเริ่มต้นและฟอนต์ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+}
+
+/* 🔹 ส่วนหัว */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #DAA520;
+    flex-wrap: wrap;
+}
+
+.menu, .Left1, .Right1 {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+}
+
+.imagehead {
+    max-width: 120px;
+    height: auto;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 10px;
+}
+
+/* 🔹 โครงสร้างหลัก */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 30px;
+}
+
+/* 🔹 ส่วนของภาพ */
+.product-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-images img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image1 {
+    transform: rotate(-8deg);
+}
+
+.image2 {
+    transform: rotate(8deg);
+}
+
+.imme {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 100px;
+}
+
+/* 🔹 ส่วนของข้อมูลสินค้า */
+.product-info {
+    max-width: 500px;
+}
+
+.product-info h3 {
+    color: #444;
+    margin-top: 0;
+}
+
+.product-info p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* 🔹 ปุ่ม */
+button {
+    background-color: gold;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: darkorange;
+}
+
+/* 🔹 วิดีโอ */
+.video-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #f8d122;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* =====================================
+   🧠 MEDIA QUERIES: ปรับตามขนาดจอ
+   ===================================== */
+
+/* 📱 มือถือ */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .menu, .Left1, .Right1 {
+        width: 35px;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        gap: 20px;
+    }
+
+    .imme {
+        margin-top: 40px;
+    }
+
+    .product-info {
+        margin: 0;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    video {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* 💻 แท็บเล็ต / iPad */
+@media (min-width: 601px) and (max-width: 992px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .product-images {
+        justify-content: center;
+    }
+
+    .product-info {
+        max-width: 80%;
+        text-align: center;
+    }
+
+    video {
+        max-width: 90%;
+    }
+}
+
+/* 🖥️ เดสก์ท็อปใหญ่ */
+@media (min-width: 993px) {
+    main {
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .product-images, .product-info {
+        flex: 1;
+    }
+
+    .product-info {
+        text-align: left;
+    }
+}
+
